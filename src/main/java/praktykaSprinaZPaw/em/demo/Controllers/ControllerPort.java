@@ -1,18 +1,23 @@
 package praktykaSprinaZPaw.em.demo.Controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import praktykaSprinaZPaw.em.demo.Request.BuildPortRequest;
+import org.springframework.ui.Model;
 
 @Controller
 public class ControllerPort {
-    @RequestMapping(path = "/add-fleet", method = RequestMethod.GET)
-    public ModelAndView getPort(){
-        ModelAndView modelAndView = new ModelAndView("port-form.html");
-        return modelAndView;
-
-
-
+    @GetMapping("/add-port")
+    public String getPortForm(Model model){
+        BuildPortRequest buildPortRequest = new BuildPortRequest();
+        model.addAttribute("request", buildPortRequest);
+        return "port-form";
+    }
+    @PostMapping("/build-port")
+    public String buildPort(@ModelAttribute BuildPortRequest buildPortRequest, Model model){
+        System.out.println(buildPortRequest);
+        model.addAttribute("message", "port dodany"+ " " + buildPortRequest.getLvl());
+        return "imeparotor-page";
     }
 }
