@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Witam Imperatorze wybierz co chcesz zrobić</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <script src="alert.js" defer></script>
+
+</head>
+<body>
+<h1>Witaj imperatorze</h1>
+<h2>Wybierz co chcesz zrobić</h2>
+<h3 th:text="${message}"></h3>
+<ul>
+   <li><a href="/add-planet"> Dodaj planetę</a> </li>
+   <li><a href="/add-fleet">Dodaj flotę</a></li>
+   <li><a href="/explore-planet">Przeglądaj planety</a></li>
+
+
+</ul>
+
+</body>
+</html>

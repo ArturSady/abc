@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Dodaj planetę do swojego układu słonecznego</h1>
+<form action="/add-planet" method="post">
+
+  <label>Nazwa planety:</label>
+    <input type="text" name="name">
+    <br>
+    <label>Rodzaj planety:</label>
+    <br>
+    <label>Gazowa</label>
+    <input type="radio" name="planet_type" value="Gas">
+    <label>Skalista</label>
+    <input type="radio" name="planet_type" value="Rock">
+    <br>
+  <label>Podaj rozmiar:</label>
+  <input type="number" name="size" >
+  <br>
+  <button type="submit"> Dodaj planetę </button>
+
+</form>
+
+</body>
+</html>
